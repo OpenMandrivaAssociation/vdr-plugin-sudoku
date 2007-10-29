@@ -2,7 +2,7 @@
 %define plugin	sudoku
 %define name	vdr-plugin-%plugin
 %define version	0.1.3
-%define rel	4
+%define rel	5
 
 Summary:	VDR plugin: Sudoku - generate and solve Number Place puzzles
 Name:		%name
