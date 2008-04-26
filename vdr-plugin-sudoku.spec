@@ -1,8 +1,8 @@
 
 %define plugin	sudoku
 %define name	vdr-plugin-%plugin
-%define version	0.1.3
-%define rel	6
+%define version	0.2.1
+%define rel	1
 
 Summary:	VDR plugin: Sudoku - generate and solve Number Place puzzles
 Name:		%name
@@ -11,9 +11,11 @@ Release:	%mkrel %rel
 Group:		Video
 License:	GPL
 URL:		http://toms-cafe.de/vdr/sudoku/
-Source:		http://toms-cafe.de/vdr/sudoku/vdr-%plugin-%version.tar.bz2
+Source:		http://toms-cafe.de/vdr/sudoku/vdr-%plugin-%version.tgz
+# Fixes build (04/2008)
+Patch0:		sudoku-0.2.1-makefile.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
 %description
@@ -28,6 +30,8 @@ missing numbers. There is only one solution of a Sudoku puzzle.
 
 %prep
 %setup -q -n %plugin-%version
+%patch0 -p1
+%vdr_plugin_prep
 
 %build
 %vdr_plugin_build
