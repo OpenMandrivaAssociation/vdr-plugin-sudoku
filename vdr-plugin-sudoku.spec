@@ -1,8 +1,8 @@
 
 %define plugin	sudoku
 %define name	vdr-plugin-%plugin
-%define version	0.2.1
-%define rel	3
+%define version	0.3.4
+%define rel	1
 
 Summary:	VDR plugin: Sudoku - generate and solve Number Place puzzles
 Name:		%name
@@ -35,10 +35,12 @@ missing numbers. There is only one solution of a Sudoku puzzle.
 
 %build
 %vdr_plugin_build
+%make -C tools CXXFLAGS="%optflags %ldflags"
 
 %install
 rm -rf %{buildroot}
 %vdr_plugin_install
+%makeinstall -C tools
 
 %clean
 rm -rf %{buildroot}
@@ -52,5 +54,6 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY
-
+%{_bindir}/sudoku_generator
+%{_mandir}/man1/sudoku_generator.1*
 
