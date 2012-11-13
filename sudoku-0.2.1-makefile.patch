@@ -1,0 +1,24 @@
+Index: sudoku-0.2.1/Makefile
+===================================================================
+--- sudoku-0.2.1/Makefile
++++ sudoku-0.2.1/Makefile	2008-04-25 01:08:42.000000000 +0300
+@@ -61,7 +61,6 @@
+ 
+ INCLUDES += -I$(VDRDIR)/include
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+-CXXFLAGS += $(INCLUDES) $(DEFINES)
+ 
+ ### The source and object files
+ 
+@@ -73,6 +72,11 @@
+ all: libvdr-$(PLUGIN).so i18n
+ 	@cd tools && $(MAKE)
+ 
++### Implicit rules:
++
++%.o: %.cpp
++	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(INCLUDES) $<
++
+ ### Dependencies:
+ 
+ DEPFILE = .dependencies
