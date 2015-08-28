@@ -3,7 +3,7 @@
 Summary:	VDR plugin: Sudoku - generate and solve Number Place puzzles
 Name:		vdr-plugin-%plugin
 Version:	0.3.5
-Release:	3
+Release:	4
 Group:		Video
 License:	GPL
 URL:		http://toms-cafe.de/vdr/sudoku/
