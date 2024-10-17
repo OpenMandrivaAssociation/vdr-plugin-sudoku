@@ -6,7 +6,7 @@ Version:	0.3.5
 Release:	4
 Group:		Video
 License:	GPL
-URL:		http://toms-cafe.de/vdr/sudoku/
+URL:		https://toms-cafe.de/vdr/sudoku/
 Source:		http://toms-cafe.de/vdr/sudoku/vdr-%plugin-%{version}.tgz
 # Fixes build (04/2008)
 Patch0:		sudoku-0.2.1-makefile.patch
