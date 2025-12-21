@@ -10,6 +10,7 @@ URL:		https://toms-cafe.de/vdr/sudoku/
 Source:		http://toms-cafe.de/vdr/sudoku/vdr-%plugin-%{version}.tgz
 # Fixes build (04/2008)
 Patch0:		sudoku-0.2.1-makefile.patch
+BuildRequires:	make
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
